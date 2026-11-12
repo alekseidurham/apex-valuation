@@ -83,7 +83,7 @@ def run_cli_valuation(
     print("\n[SUCCESS] Valuation complete. Launch interactive UI: 'streamlit run app.py'")
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description="ApexValuation CLI Engine")
     parser.add_argument("--ticker", type=str, default="SHEL.L", help="Corporate ticker symbol (e.g. SHEL.L, AAPL, BP.L, MSFT)")
     parser.add_argument("--offline", action="store_true", help="Force offline benchmark mode (100% resilient)")
@@ -91,3 +91,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     run_cli_valuation(ticker=args.ticker, force_offline=args.offline, trials=args.trials)
+
+
+if __name__ == "__main__":
+    main()
